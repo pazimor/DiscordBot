@@ -18,10 +18,7 @@ impl EventHandler for Handler {}
 
 #[tokio::main]
 async fn main() {
-    if env::args().len() <= 1 {
-	process::exit(0x01);
-    }
-    let token = &env::args().collect::<Vec<_>>()[1];
+    let token = env::var("DISCORD_TOKEN").expect("token");
     let framework = StandardFramework::new()
         .configure(|c| c.prefix("~")) // set the bot's prefix to "~"
         .group(&GENERAL_GROUP);
