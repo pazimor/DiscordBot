@@ -1,9 +1,8 @@
 version: '3'
 services:
   bot:
-    build:
-      context: .
+    build: .
     ## define your token HERE
-    command: sh -c "rm -rf target && cargo build --release && ./discord_bot"
+    command: ./target/release/discord_bot
     environment:
-      - DISCORD_TOKEN= ##TOKEN HERE##
+      - DISCORD_TOKEN=

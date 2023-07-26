@@ -1,5 +1,4 @@
 use std::env;
-use std::process;
 
 use serenity::async_trait;
 use serenity::prelude::*;
@@ -18,7 +17,9 @@ impl EventHandler for Handler {}
 
 #[tokio::main]
 async fn main() {
+    println!("debut");
     let token = env::var("DISCORD_TOKEN").expect("token");
+    println!("token {}", token);
     let framework = StandardFramework::new()
         .configure(|c| c.prefix("~")) // set the bot's prefix to "~"
         .group(&GENERAL_GROUP);
