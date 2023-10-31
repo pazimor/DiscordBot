@@ -3,7 +3,7 @@ use std::env;
 mod ping_cmd;
 // pub use ping_cmd::{ping, ping_ip, pick_vpn, pc_on, pc_on, pc_off};
 
-use crate::ping_cmd::{PING_COMMAND, PING_IP_COMMAND, PICK_VPN_COMMAND, PC_ON_COMMAND, PC_OFF_COMMAND};
+use crate::ping_cmd::{PING_DEFAULT_COMMAND, PING_IP_COMMAND, PICK_VPN_COMMAND, PC_ON_COMMAND, PC_OFF_COMMAND};
 
 use serenity::async_trait;
 use serenity::prelude::*;
@@ -11,7 +11,7 @@ use serenity::framework::standard::macros::{group};
 use serenity::framework::standard::{StandardFramework};
 
 #[group]
-#[commands(ping, ping_ip, pick_vpn, pc_on, pc_off)]
+#[commands(ping_default, ping_ip, pick_vpn, pc_on, pc_off)]
 struct General;
 
 struct Handler;
