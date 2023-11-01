@@ -26,8 +26,8 @@ pub async fn ping_ip(ctx: &Context, msg: &Message, args: Args) -> CommandResult 
             msg.reply(ctx, format!("Ping to {} succeeded. ({:?})", ip, response)).await?;
             Ok(())
         }
-        Err(..) => {
-            msg.reply(ctx, "Ip not responding").await?;
+        Err(_err) => {
+            msg.reply(ctx, format!("Probleme: {:?}", _err)).await?;
             Ok(())
         }
     }

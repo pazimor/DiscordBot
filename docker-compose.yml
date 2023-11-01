@@ -5,4 +5,4 @@ services:
     ## define your token HERE
     command: ./target/release/discord_bot
     environment:
-      - DISCORD_TOKEN=
+      - DISCORD_TOKEN=MTAyMDYwNDY3MTY2NjE2NzkxOQ.G-GBBq.wNr3lin0drJxsjjLQEhIIcLga5YB5FpaEqMWpE
