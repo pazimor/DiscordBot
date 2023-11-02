@@ -27,10 +27,7 @@ async fn main() {
     let framework = StandardFramework::new()
         .configure(|c| c.prefix("~")) // set the bot's prefix to "~"
         .group(&GENERAL_GROUP);
-
-    // Login with a bot token from the environment
     let intents = GatewayIntents::non_privileged() | GatewayIntents::MESSAGE_CONTENT;
-
     let mut client = Client::builder(token, intents)
         .event_handler(Handler)
         .framework(framework)

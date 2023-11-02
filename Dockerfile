@@ -1,6 +1,8 @@
 FROM rust:latest
 WORKDIR /app
-COPY . .
+COPY . /app/
 RUN rm -rf target
 RUN cargo build --release
-CMD ["./discord_bot"]
+RUN cp ./target/release/discord_bot .
+ENV DISCORD_TOKEN=*TOKEN*
+CMD ["./target/release/discord_bot"]

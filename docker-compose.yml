@@ -1,8 +1,9 @@
-version: '3'
+version: '3.5'
 services:
   bot:
+    container_name: discord-rusty-guy
+    restart: always
     build: .
-    ## define your token HERE
-    command: ./target/release/discord_bot
+    command: ["./discord_bot"]
     environment:
-      - DISCORD_TOKEN=
+      - "DISCORD_TOKEN=*TOKEN*"
