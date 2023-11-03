@@ -22,7 +22,7 @@ pub async fn ping_ip(ctx: &Context, msg: &Message, args: Args) -> CommandResult 
 
     println!("{}", args.rest());
     match ping(ip, duration, None, None, None, None) {
-        Ok(response) => {
+        Ok(_) => {
             msg.reply(ctx, format!("Ping to {} succeeded.", ip)).await?;
             Ok(())
         }

@@ -1,4 +1,4 @@
 { pkgs ? import <nixpkgs> {} }:
 pkgs.mkShell rec {
-    buildInputs = with pkgs; [ cargo rustc rustup clang llvmPackages.bintools ];
+    buildInputs = with pkgs; [ cargo rustc rustup clang llvmPackages.bintools openssl ];
 }
